@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
     <Router>
-      <div className="container">
+
         <HeaderComponent />
         <div className="container">
             <Routes>
@@ -18,7 +18,7 @@ function App() {
             </Routes> 
         </div>
         <FooterComponent />
-      </div>
+
     </Router>
   </div>
   );
