@@ -1,5 +1,6 @@
 ﻿import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import EmployeeService from '../services/EmployeeService';
 
 const CreateEmployeeComponent = () => {
     const navigate = useNavigate();
@@ -18,6 +19,10 @@ const CreateEmployeeComponent = () => {
             emailId: state.emailId,
         };
         console.log('employee =>' + JSON.stringify(employee));
+
+        EmployeeService.createEmployee(employee).then(res =>{
+            navigate('/employees');
+        });
     };
 
     const handleInputChange = (event) => {
