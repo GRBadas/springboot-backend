@@ -13,7 +13,7 @@ function ListEmployeeComponent() {
   }, []);
 
   function editEmployee(id) {
-    navigate('/update-employee/${id}');
+    navigate(`/update-employee/${id}`);
   }
 
   function addEmployee() {
@@ -45,7 +45,7 @@ function ListEmployeeComponent() {
                 <td> {employee.lastName} </td>
                 <td> {employee.emailId} </td>
                 <td>
-                  <button onClick={() => this.editEmployee(employee.id)} className="btn btn-info">
+                  <button onClick={() => editEmployee(employee.id)} className="btn btn-info">
                     Update
                   </button>
                 </td>
