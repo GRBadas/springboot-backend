@@ -44,7 +44,9 @@ const UpdateEmployeeComponent = () => {
         console.log('employee =>' + JSON.stringify(employee));
 
         await EmployeeService.updateEmployeeId(state)
-        navigate(`/employees`);
+        navigate(`/employees`); 
+            
+                
     };
 
     const handleInputChange = (event) => {
