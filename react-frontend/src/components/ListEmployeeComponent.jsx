@@ -33,6 +33,10 @@ function ListEmployeeComponent() {
       window.location.reload()
   }
 
+  function viewEmployee(id) {
+    navigate(`/view-employee/${id}`);
+  }
+
   return (
     <div>
       <h2 className='text-center'>Employees List</h2>
@@ -62,6 +66,7 @@ function ListEmployeeComponent() {
                     Update
                   </button>
                   <button style={{marginLeft: "10px"}} onClick={() => deleteEmployee(employee)} className='btn btn-danger'> Delete </button>
+                  <button style={{marginLeft: "10px"}} onClick={() => viewEmployee(employee.id)} className='btn btn-primary'> View </button>
                 </td>
               </tr>
             ))}
