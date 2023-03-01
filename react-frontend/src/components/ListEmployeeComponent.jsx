@@ -20,6 +20,19 @@ function ListEmployeeComponent() {
     navigate('/add-employee');
   }
 
+  async function deleteEmployee(employeeId) {
+    await EmployeeService.deleteEmployee(employeeId)
+      .then(response => {
+        console.log(`Employee with ID ${employeeId} has been deleted successfully.`);
+        setEmployees(employees.filter(employee => employee.id !== employeeId));
+      })
+      .catch(error => {
+        console.log(`Error deleting employee with ID ${employeeId}: ${error.message}`);
+        
+      });
+      window.location.reload()
+  }
+
   return (
     <div>
       <h2 className='text-center'>Employees List</h2>
@@ -48,6 +61,7 @@ function ListEmployeeComponent() {
                   <button onClick={() => editEmployee(employee.id)} className="btn btn-info">
                     Update
                   </button>
+                  <button style={{marginLeft: "10px"}} onClick={() => deleteEmployee(employee)} className='btn btn-danger'> Delete </button>
                 </td>
               </tr>
             ))}
